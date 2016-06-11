@@ -8,13 +8,14 @@
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-multmerge(mypath)
+multmerge(mypath, fileEncoding = "")
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{mypath}{the path where the csv files live. NOTE: only csv files can be in the path called
 %%     ~~Describe \code{mypath} here~~
 }
+  \item{fileEncoding}{This follows the same rules as the fileEncoding argument in read.csv. Added in because this was needed for a project}
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~
