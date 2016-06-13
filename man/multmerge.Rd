@@ -47,15 +47,14 @@ multmerge("./data/")
   this will return a data frame of all the csv files in the path in one frame.
 
 ## The function is currently defined as
-function (mypath)
+function (mypath, fileEncoding)
 {
-    filenames = list.files(path = mypath, full.names = TRUE)
-    datalist = lapply(filenames, function(x) {
-        read.csv(file = x, header = T)
-    })
-    Reduce(function(x, y) {
-        rbind(x, y)
-    }, datalist)
+  filenames=list.files(path=mypath, full.names=TRUE)
+  datalist = lapply(filenames,
+                    function(x){read.csv(file=x,
+                                         header=T,
+                                         fileEncoding = fileEncoding)})
+  Reduce(function(x,y) {rbind(x,y)}, datalist)
   }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
